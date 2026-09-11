@@ -29,7 +29,7 @@ cask "flip" do
   # and Screen Recording are keyed to, revoking both on every existing install.
   postflight_steps do
     run "/usr/bin/xattr",
-        args: ["-dr", "com.apple.quarantine", "Flip.app"],
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Flip.app"],
         base: :appdir
   end
 
